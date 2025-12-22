@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const intro = document.getElementById("intro");
+    if (intro) intro.remove();
+  }, 3500);
+});
 body {
   margin: 0;
   font-family: Arial, sans-serif;
