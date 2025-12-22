@@ -39,3 +39,9 @@ document.querySelectorAll(".candidate button").forEach(button => {
 function disableButtons() {
   document.querySelectorAll("button").forEach(btn => btn.disabled = true);
 }
+const messageFin = document.getElementById("message");
+if (messageFin) {
+  messageFin.innerHTML = "⛔ VOTES TERMINÉS — RENDEZ-VOUS DEMAIN À 10H";
+  messageFin.style.color = "red";
+  messageFin.style.fontWeight = "bold";
+}
