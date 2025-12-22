@@ -147,3 +147,26 @@ button:active {
   transform: scale(0.95);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
+.vote-feedback {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #00ffcc;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.vote-feedback.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vote-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vote-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(255, 0, 150, 0.8);
+}
