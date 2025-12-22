@@ -32,7 +32,7 @@ document.querySelectorAll(".candidate button").forEach(button => {
     localStorage.setItem("hasVoted", "true");
 
     message.textContent = "🔥 Vote enregistré !";
-    disableButtons();
+    event.target.style.transform = "scale(0.9)";disableButtons();
   });
 });
 
