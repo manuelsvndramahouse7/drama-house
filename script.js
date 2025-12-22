@@ -10,7 +10,7 @@ if (localStorage.getItem("lastVoteDay") !== today) {
 
 // ⏰ Votes ouverts de 10h à 22h
 if (hour < 10 || hour >= 22) {
-  if (message) message.textContent = "⛔ Votes ouverts de 10h à 22h";
+  if (message) message.textContent = message.innerHTML = "⛔ VOTES TERMINÉS — RENDEZ-VOUS DEMAIN À 10H";
   disableButtons();
 }
 
