@@ -58,3 +58,11 @@ document.addEventListener("click", () => {
 if (navigator.vibrate) {
   navigator.vibrate([120, 80, 120, 80, 160]);
 }
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const intro = document.getElementById("intro");
+    if (intro) {
+      intro.style.display = "none";
+    }
+  }, 4000);
+});
