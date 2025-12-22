@@ -1,0 +1,50 @@
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+}
+
+#vote-zone {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.candidate {
+  background: #1b1b1b;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.candidate img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #ff0055;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+#message {
+  margin: 20px;
+  font-weight: bold;
+}
