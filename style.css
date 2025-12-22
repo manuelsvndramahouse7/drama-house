@@ -170,3 +170,45 @@ button:active {
   transform: scale(0.95);
   box-shadow: 0 0 15px rgba(255, 0, 150, 0.8);
 }
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+#intro h1 {
+  color: #ff2d95;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  animation: zoomGlow 2.5s ease forwards;
+}
+
+@keyframes zoomGlow {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+    text-shadow: none;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #ff2d95;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
