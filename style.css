@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a0033, #000);
+  color: white;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  padding: 30px 15px;
+  background: linear-gradient(135deg, #ff0055, #7b00ff);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* ZONE DE VOTE */
+#vote-zone {
+  padding: 30px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+}
+
+/* CANDIDATS */
+.candidate {
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 0 30px rgba(255,0,85,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(255,0,85,0.7);
+}
+
+.candidate img {
+  width: 100%;
+  border-radius: 14px;
+  border: 3px solid #ff0055;
+}
+
+/* BOUTON VOTER – VERSION WAOUH */
+button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(90deg, #ff0055, #ffea00, #ff0055);
+  background-size: 200% auto;
+  color: black;
+  cursor: pointer;
+  box-shadow:
+    0 0 12px #ff0055,
+    0 0 24px #ff0055,
+    0 0 50px rgba(255,0,85,0.8);
+  animation: neonPulse 1.5s infinite;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  background-position: right center;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background: #333;
+  color: #aaa;
+  box-shadow: none;
+  animation: none;
+  cursor: not-allowed;
+}
+
+/* MESSAGE */
+#message {
+  margin: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ANIMATION NÉON */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 10px #ff0055,
+      0 0 20px #ff0055,
+      0 0 35px rgba(255,0,85,0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 20px #ffea00,
+      0 0 40px #ffea00,
+      0 0 70px rgba(255,234,0,0.9);
+  }
+  100% {
+    box-shadow:
+      0 0 10px #ff0055,
+      0 0 20px #ff0055,
+      0 0 35px rgba(255,0,85,0.6);
+  }
+}
