@@ -54,9 +54,7 @@ document.addEventListener("click", () => {
     introSound.volume = 0.8;
     introSound.play();
   }
-
-  // 📳 Vibration mobile (si supportée)
-  if (navigator.vibrate) {
-    navigator.vibrate([60, 40, 60]);
-  }
-}, { once: true });
+  // 📳 VIBRATION PLUS FORTE
+if (navigator.vibrate) {
+  navigator.vibrate([120, 80, 120, 80, 160]);
+}
