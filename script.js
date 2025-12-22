@@ -45,3 +45,18 @@ if (messageFin) {
   messageFin.style.color = "red";
   messageFin.style.fontWeight = "bold";
 }
+// 🎬 Intro Netflix sound + vibration
+const introSound = document.getElementById("intro-sound");
+
+document.addEventListener("click", () => {
+  // Son
+  if (introSound && introSound.paused) {
+    introSound.volume = 0.8;
+    introSound.play();
+  }
+
+  // 📳 Vibration mobile (si supportée)
+  if (navigator.vibrate) {
+    navigator.vibrate([60, 40, 60]);
+  }
+}, { once: true });
