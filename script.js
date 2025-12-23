@@ -1,42 +1,29 @@
-// INTRO → CONTENU
+// INTRO
 setTimeout(() => {
   document.getElementById("intro").style.display = "none";
-  document.getElementById("content").classList.remove("hidden");
+  document.getElementById("votes").classList.remove("hidden");
 }, 2000);
 
-// 1 VOTE PAR APPAREIL
-if (!localStorage.getItem("votes")) {
-  localStorage.setItem("votes", JSON.stringify({}));
+// FAUX VOTE (1 par appareil)
+if (localStorage.getItem("voted")) {
+  disableVotes();
 }
 
-const votes = JSON.parse(localStorage.getItem("votes"));
-const cards = document.querySelectorAll(".card");
+document.querySelectorAll(".card button").forEach(button => {
+  button.addEventListener("click", () => {
+    if (localStorage.getItem("voted")) return;
 
-cards.forEach(card => {
-  const id = card.dataset.id;
-  const btn = card.querySelector("button");
-
-  if (votes[id]) {
+    const card = button.parentElement;
     card.classList.add("voted");
-    btn.disabled = true;
-  }
 
-  btn.addEventListener("click", () => {
-    if (Object.keys(votes).length >= 1) {
-      alert("Vous avez déjà voté !");
-      return;
-    }
-
-    votes[id] = true;
-    localStorage.setItem("votes", JSON.stringify(votes));
-
-    card.classList.add("voted");
-    btn.disabled = true;
-
-    // Animation
-    card.style.transform = "scale(0.9)";
-    setTimeout(() => {
-      card.style.transform = "scale(1)";
-    }, 200);
+    localStorage.setItem("voted", "true");
+    disableVotes();
   });
 });
+
+function disableVotes() {
+  document.querySelectorAll("button").forEach(btn => {
+    btn.disabled = true;
+    btn.textContent = "VOTE ENREGISTRÉ";
+  });
+}
