@@ -1,5 +1,11 @@
-body {
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background: black;
   font-family: Arial, sans-serif;
   color: white;
@@ -13,81 +19,82 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 #intro img {
-  width: 420px; /* LOGO TRÈS GROS */
-  animation: logoBounce 2s ease forwards;
-  filter:
-    drop-shadow(0 0 25px #ff2d95)
-    drop-shadow(0 0 60px #ff2d95);
+  width: 300px;
+  animation: bounce 2s ease, glow 2s ease;
+  filter: drop-shadow(0 0 25px #ff2d95);
 }
 
-/* ANIMATION LOGO */
-@keyframes logoBounce {
-  0% { transform: scale(0.5); opacity: 0; }
-  60% { transform: scale(1.15); opacity: 1; }
-  80% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-}
-
-/* CONTENU */
+/* APP */
 .hidden {
   display: none;
 }
 
-.grid {
-  max-width: 1000px;
-  margin: 80px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 20px;
+#app {
+  padding: 30px;
 }
 
-/* CASE */
+/* GRID 3x3 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
 .card {
-  border-radius: 16px;
-  padding: 15px;
-  background: #0b0b0b;
   border: 2px solid #ff2d95;
-  box-shadow:
-    0 0 15px #ff2d95,
-    inset 0 0 10px #ff2d95;
+  box-shadow: 0 0 15px #ff2d95;
+  padding: 10px;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .card img {
   width: 100%;
-  border-radius: 12px;
+  height: 180px;
+  object-fit: cover;
 }
 
 /* BOUTON */
-.card button {
-  margin-top: 12px;
-  padding: 10px 22px;
+.vote-btn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
   background: #e50914;
   color: white;
   border: none;
-  border-radius: 25px;
-  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 12px #e50914;
+  transition: transform 0.2s ease;
 }
 
-.card button:active {
+.vote-btn:active {
   transform: scale(0.9);
 }
 
-/* EFFET CLIC CASE */
-.card.clicked {
-  animation: cardBounce 0.3s ease;
+/* VOTÉ */
+.voted img {
+  filter: grayscale(100%) brightness(0.5);
+  position: relative;
 }
 
-@keyframes cardBounce {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.92); }
+.voted img::after {
+  content: "✖";
+}
+
+/* ANIMATIONS */
+@keyframes bounce {
+  0% { transform: scale(0.5); }
+  60% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 0px #ff2d95); }
+  to { filter: drop-shadow(0 0 30px #ff2d95); }
+}
+
