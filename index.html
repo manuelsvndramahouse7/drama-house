@@ -2,60 +2,35 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Drama House Vote</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama House – Vote</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- LOGO INTRO -->
+<div id="intro">
+  <img src="IMG_1.png" id="logo">
+</div>
+
+<!-- GRILLE -->
+<div id="vote-section" class="hidden">
   <div class="grid">
-    <!-- 9 CARTES -->
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="1">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="2">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="3">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="4">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="5">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="6">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="7">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="8">VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="IMG_2628.png">
-      <button class="vote-btn" data-id="9">VOTER</button>
-    </div>
+    <!-- 9 cartes -->
+    <script>
+      for (let i = 1; i <= 9; i++) {
+        document.write(`
+          <div class="card">
+            <img src="IMG_${i}.png">
+            <button class="vote-btn" onclick="vote(${i})">VOTER</button>
+          </div>
+        `);
+      }
+    </script>
   </div>
 
-  <script src="script.js"></script>
+  <div id="loser" class="loser"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
