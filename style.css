@@ -17,8 +17,26 @@ body {
 }
 
 #intro img {
-  width: 90vw;       /* 🔥 TRÈS GROS */
-  max-width: 600px; /* limite sur grands écrans */
+  width: 90vw;
+  max-width: 600px;
+
+  animation: zoomIntro 2.5s ease-out forwards,
+             neonPulse 1.6s infinite alternate;
+
+  filter: drop-shadow(0 0 15px #ff2d95)
+          drop-shadow(0 0 30px #ff2d95)
+          drop-shadow(0 0 60px rgba(255,45,149,0.9));
+}
+@keyframes neonPulse {
+  0% {
+    filter: drop-shadow(0 0 10px #ff2d95)
+            drop-shadow(0 0 25px #ff2d95);
+  }
+  100% {
+    filter: drop-shadow(0 0 25px #ff2d95)
+            drop-shadow(0 0 60px rgba(255,45,149,1));
+  }
+}
 }
 
 }
@@ -44,11 +62,6 @@ body {
   display: none;
   text-align: center;
   padding-top: 100px;
-}
-/* 🎬 EFFET INTRO LOGO */
-#intro img {
-  width: 320px; /* taille du logo */
-  animation: logoIntro 2.5s ease-out forwards;
 }
 
 @keyframes logoIntro {
