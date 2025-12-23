@@ -15,3 +15,7 @@ window.addEventListener("load", () => {
     document.getElementById("content").style.display = "block";
   }, 3000);
 });
+window.addEventListener("click", () => {
+  const sound = document.getElementById("introSound");
+  sound.play();
+}, { once: true });
