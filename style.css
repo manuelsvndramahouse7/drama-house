@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #000;
+  background: black;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -17,66 +17,77 @@ body {
 }
 
 #intro img {
-  width: 280px;
-  animation: bounce 1.8s ease, glow 1.8s ease;
+  width: 420px; /* LOGO TRÈS GROS */
+  animation: logoBounce 2s ease forwards;
+  filter:
+    drop-shadow(0 0 25px #ff2d95)
+    drop-shadow(0 0 60px #ff2d95);
 }
 
-/* APP */
+/* ANIMATION LOGO */
+@keyframes logoBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* CONTENU */
 .hidden {
   display: none;
 }
 
-/* GRID 3x3 */
 .grid {
+  max-width: 1000px;
+  margin: 80px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 30px;
+  gap: 30px;
+  padding: 20px;
 }
 
-/* CARD */
+/* CASE */
 .card {
+  border-radius: 16px;
+  padding: 15px;
+  background: #0b0b0b;
   border: 2px solid #ff2d95;
-  box-shadow: 0 0 15px #ff2d95;
-  padding: 10px;
-  transition: transform 0.2s;
-}
-
-.card:active {
-  transform: scale(0.95);
+  box-shadow:
+    0 0 15px #ff2d95,
+    inset 0 0 10px #ff2d95;
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
 .card img {
   width: 100%;
-  display: block;
+  border-radius: 12px;
 }
 
 /* BOUTON */
-button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 12px;
+.card button {
+  margin-top: 12px;
+  padding: 10px 22px;
   background: #e50914;
-  border: none;
   color: white;
-  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
   cursor: pointer;
-  transition: transform 0.2s;
+  box-shadow: 0 0 12px #e50914;
 }
 
-button:active {
+.card button:active {
   transform: scale(0.9);
 }
 
-/* ANIMATIONS */
-@keyframes bounce {
-  0% { transform: scale(0.6); }
-  60% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+/* EFFET CLIC CASE */
+.card.clicked {
+  animation: cardBounce 0.3s ease;
 }
 
-@keyframes glow {
-  0% { box-shadow: 0 0 0 #ff2d95; }
-  60% { box-shadow: 0 0 40px #ff2d95; }
-  100% { box-shadow: 0 0 20px #ff2d95; }
+@keyframes cardBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
 }
