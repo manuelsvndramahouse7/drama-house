@@ -1,6 +1,9 @@
+/* RESET */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: black;
+  color: white;
 }
 
 /* INTRO */
@@ -9,32 +12,36 @@ body {
   inset: 0;
   background: black;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
-  animation: hideIntro 1s forwards;
-  animation-delay: 3s;
 }
 
 #intro img {
-  width: 200px;
-  animation: zoomIntro 2s ease;
+  width: 220px;
+  opacity: 0;
+  animation: zoomIntro 2.5s ease forwards;
 }
 
+/* ANIMATION */
 @keyframes zoomIntro {
-  from {
-    opacity: 0;
+  0% {
     transform: scale(0.6);
+    opacity: 0;
   }
-  to {
+  60% {
+    transform: scale(1.05);
     opacity: 1;
+  }
+  100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
-@keyframes hideIntro {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+/* CONTENU */
+#content {
+  display: none;
+  text-align: center;
+  padding-top: 100px;
 }
