@@ -2,29 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>ADMIN – Drama House</title>
+  <title>Admin – Drama House</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 style="color:#ff2d95;text-align:center;">ADMIN – Choix du perdant</h1>
+<h1>ADMIN – Choisir le perdant</h1>
 
-<div class="grid">
-  <button class="admin-btn" onclick="setLoser(1)">Perdant 1</button>
-  <button class="admin-btn" onclick="setLoser(2)">Perdant 2</button>
-  <button class="admin-btn" onclick="setLoser(3)">Perdant 3</button>
-  <button class="admin-btn" onclick="setLoser(4)">Perdant 4</button>
-  <button class="admin-btn" onclick="setLoser(5)">Perdant 5</button>
-  <button class="admin-btn" onclick="setLoser(6)">Perdant 6</button>
-  <button class="admin-btn" onclick="setLoser(7)">Perdant 7</button>
-  <button class="admin-btn" onclick="setLoser(8)">Perdant 8</button>
-  <button class="admin-btn" onclick="setLoser(9)">Perdant 9</button>
+<div class="admin-grid">
+  <button onclick="setLoser(1)">Perdant 1</button>
+  <button onclick="setLoser(2)">Perdant 2</button>
+  <button onclick="setLoser(3)">Perdant 3</button>
+  <button onclick="setLoser(4)">Perdant 4</button>
+  <button onclick="setLoser(5)">Perdant 5</button>
+  <button onclick="setLoser(6)">Perdant 6</button>
+  <button onclick="setLoser(7)">Perdant 7</button>
+  <button onclick="setLoser(8)">Perdant 8</button>
+  <button onclick="setLoser(9)">Perdant 9</button>
 </div>
 
 <script>
-function setLoser(id){
-  localStorage.setItem("finalLoser", id);
-  alert("Perdant choisi : " + id);
+function setLoser(id) {
+  localStorage.setItem("loser", id);
+  alert("Perdant défini : " + id);
 }
 </script>
 
