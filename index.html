@@ -39,17 +39,17 @@
 <p id="message"></p>
 
 <script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const intro = document.getElementById("intro");
-      if (intro) {
-        intro.style.opacity = "0";
-        intro.style.pointerEvents = "none";
-        setTimeout(() => intro.style.display = "none", 1000);
-      }
-    }, 2500);
-  });
-</script>
+<script>
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
 
-</body>
-</html>
+  setTimeout(() => {
+    intro.style.opacity = "0";
+    intro.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 600);
+  }, 2500);
+});
+</script>
