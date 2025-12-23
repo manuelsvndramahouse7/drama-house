@@ -39,7 +39,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 480px; /* ➜ PLUS LARGE = cases plus grosses */
+  max-width: 600px; /* ➜ PLUS LARGE = cases plus grosses */
   margin: 0 auto;
 }
 }
