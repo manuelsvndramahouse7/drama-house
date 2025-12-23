@@ -85,3 +85,13 @@ body {
   object-fit: cover;
   display: block;
 }
+/* ANIMATION AU CLIC (style Netflix) */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff2d95;
+  animation: neonPulse 1s infinite alternate;
+}
