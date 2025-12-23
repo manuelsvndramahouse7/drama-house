@@ -18,9 +18,11 @@ body {
 }
 
 #intro img {
-  width: 220px;
+  width: 420px;        /* taille du logo */
+  max-width: 90%;
   opacity: 0;
-  animation: zoomIntro 2.5s ease forwards;
+  animation: introZoom 2.5s ease forwards;
+}
 }
 
 /* ANIMATION */
