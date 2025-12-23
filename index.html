@@ -1,64 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Drama House</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <img src="IMG_2628.png" alt="Drama House">
-</div>
-
-<!-- VOTES -->
-<div id="votes" class="hidden">
-  <div class="grid">
-    
-    <!-- 9 candidats -->
-    <div class="card">
-      <img src="candidat1.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat2.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat3.jpg">
-      <button>VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="candidat4.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat5.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat6.jpg">
-      <button>VOTER</button>
-    </div>
-
-    <div class="card">
-      <img src="candidat7.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat8.jpg">
-      <button>VOTER</button>
-    </div>
-    <div class="card">
-      <img src="candidat9.jpg">
-      <button>VOTER</button>
-    </div>
-
+  <!-- LOGO -->
+  <div id="logo-container">
+    <img src="IMG_2628.png" alt="Logo" id="logo">
   </div>
-</div>
 
-<script src="script.js"></script>
+  <!-- CONTENU -->
+  <div id="content" class="hidden">
+    <div class="grid">
+      <!-- 9 CASES -->
+      <div class="card" data-id="1"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="2"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="3"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="4"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="5"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="6"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="7"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="8"><img src="IMG_2628.png"><button>Voter</button></div>
+      <div class="card" data-id="9"><img src="IMG_2628.png"><button>Voter</button></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
