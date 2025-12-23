@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: hideIntro 1s forwards;
+  animation-delay: 3s;
+}
+
+#intro img {
+  width: 200px;
+  animation: zoomIntro 2s ease;
+}
+
+@keyframes zoomIntro {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hideIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
