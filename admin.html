@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin – Drama House</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>ADMIN</title>
+<style>
+body {
+  background: black;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+button {
+  margin: 10px;
+  padding: 15px;
+  font-size: 16px;
+}
+</style>
 </head>
 <body>
 
-<h1>ADMIN – Choisir le perdant</h1>
+<h1>ADMIN – DRAMA HOUSE</h1>
 
-<div class="admin-grid">
-  <button onclick="setLoser(1)">Perdant 1</button>
-  <button onclick="setLoser(2)">Perdant 2</button>
-  <button onclick="setLoser(3)">Perdant 3</button>
-  <button onclick="setLoser(4)">Perdant 4</button>
-  <button onclick="setLoser(5)">Perdant 5</button>
-  <button onclick="setLoser(6)">Perdant 6</button>
-  <button onclick="setLoser(7)">Perdant 7</button>
-  <button onclick="setLoser(8)">Perdant 8</button>
-  <button onclick="setLoser(9)">Perdant 9</button>
-</div>
+<p>Choisir le perdant :</p>
+
+<button onclick="setLoser(0)">Candidat 1</button>
+<button onclick="setLoser(1)">Candidat 2</button>
+<button onclick="setLoser(2)">Candidat 3</button>
+<button onclick="setLoser(3)">Candidat 4</button>
+<button onclick="setLoser(4)">Candidat 5</button>
+<button onclick="setLoser(5)">Candidat 6</button>
+<button onclick="setLoser(6)">Candidat 7</button>
+<button onclick="setLoser(7)">Candidat 8</button>
+<button onclick="setLoser(8)">Candidat 9</button>
+
+<hr>
+
+<button onclick="resetAll()">🔄 RÉINITIALISER</button>
 
 <script>
 function setLoser(id) {
   localStorage.setItem("loser", id);
-  alert("Perdant défini : " + id);
+  alert("Perdant défini !");
+}
+
+function resetAll() {
+  localStorage.removeItem("loser");
+  localStorage.removeItem("voted");
+  alert("Votes et perdant réinitialisés");
 }
 </script>
 
