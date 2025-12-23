@@ -18,7 +18,7 @@ body {
 }
 
 #intro img {
-  width:600px;        /* taille du logo */
+  width:520px;        /* taille du logo */
   max-width: 90%;
   opacity: 0;
   animation: introZoom 2.5s ease forwards;
