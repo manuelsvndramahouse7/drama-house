@@ -1,10 +1,8 @@
-/* RESET */
 body {
   margin: 0;
-  background: black;
-  color: white;
+  background: #000;
   font-family: Arial, sans-serif;
-  text-align: center;
+  color: white;
 }
 
 /* INTRO */
@@ -19,62 +17,66 @@ body {
 }
 
 #intro img {
-  width: 90vw;
-  max-width: 500px;
-  animation: introZoom 2.5s ease-out forwards;
-  filter:
-    drop-shadow(0 0 20px #ff2d95)
-    drop-shadow(0 0 50px rgba(255,45,149,0.8));
+  width: 280px;
+  animation: bounce 1.8s ease, glow 1.8s ease;
 }
 
-/* INTRO ANIMATION */
-@keyframes introZoom {
-  0% {
-    transform: scale(0.4);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* CONTENU */
-#content {
+/* APP */
+.hidden {
   display: none;
-  padding-top: 40px;
 }
 
-/* GRILLE 3x3 */
+/* GRID 3x3 */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  max-width: 360px;
-  margin: 30px auto;
+  gap: 25px;
+  padding: 30px;
 }
 
-/* CARTES */
+/* CARD */
 .card {
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
   border: 2px solid #ff2d95;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 15px #ff2d95;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.card:active {
+  transform: scale(0.95);
 }
 
 .card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
 }
 
-/* EFFET CLIC */
-.card.active {
-  transform: scale(1.08);
-  box-shadow: 0 0 30px #ff2d95;
+/* BOUTON */
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+/* ANIMATIONS */
+@keyframes bounce {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 0 #ff2d95; }
+  60% { box-shadow: 0 0 40px #ff2d95; }
+  100% { box-shadow: 0 0 20px #ff2d95; }
 }
