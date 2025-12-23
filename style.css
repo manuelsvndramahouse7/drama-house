@@ -22,45 +22,36 @@ body {
   width: 90vw;
   max-width: 600px;
 
-  /* ✅ DEUX animations ENSEMBLE */
-  animation:
-    zoomIntro 2.5s ease-out forwards,
-    neonPulse 1.6s infinite alternate;
+  animation: zoomIntro 2.5s ease-out forwards,
+             neonPulse 1.6s infinite alternate;
 
-  /* néon de base */
-  filter:
-    drop-shadow(0 0 15px #ff2d95)
-    drop-shadow(0 0 30px #ff2d95)
-    drop-shadow(0 0 60px rgba(255, 45, 149, 0.8));
+  filter: drop-shadow(0 0 20px #ff2d95)
+          drop-shadow(0 0 50px rgba(255,45,149,0.8));
 }
 
-/* 🎬 ANIMATION ZOOM / REBOND */
+/* ANIMATION ZOOM */
 @keyframes zoomIntro {
   0% {
-    transform: scale(0.4);
+    transform: scale(0.6);
     opacity: 0;
   }
   60% {
-    transform: scale(1.08);
+    transform: scale(1.05);
     opacity: 1;
   }
   100% {
     transform: scale(1);
-    opacity: 1;
   }
 }
 
-/* ⚡ ANIMATION NÉON ÉLECTRIQUE */
+/* EFFET NÉON */
 @keyframes neonPulse {
   0% {
-    filter:
-      drop-shadow(0 0 10px #ff2d95)
-      drop-shadow(0 0 25px #ff2d95);
+    filter: drop-shadow(0 0 15px #ff2d95);
   }
   100% {
-    filter:
-      drop-shadow(0 0 25px #ff2d95)
-      drop-shadow(0 0 60px rgba(255, 45, 149, 1));
+    filter: drop-shadow(0 0 35px #ff2d95)
+            drop-shadow(0 0 70px rgba(255,45,149,0.9));
   }
 }
 
