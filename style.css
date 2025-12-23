@@ -287,3 +287,40 @@ button:active {
     visibility: hidden;
   }
 } 
+/* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOutIntro 3s ease forwards;
+  animation-delay: 2.5s;
+}
+
+#intro img {
+  width: 260px;
+  max-width: 80%;
+  animation: zoomLogo 2.5s ease forwards;
+}
+
+/* Animations */
+@keyframes zoomLogo {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
