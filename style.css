@@ -14,69 +14,51 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2s;
 }
 
 #intro img {
   width: 300px;
-  animation: bounce 2s ease, glow 2s infinite alternate;
+  animation: bounce 2s ease;
+  filter: drop-shadow(0 0 30px #ff2d95);
 }
 
 @keyframes bounce {
-  0% { transform: scale(0.6); opacity: 0; }
+  0% { transform: scale(0.5); opacity: 0; }
   60% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(1); }
 }
 
-@keyframes glow {
-  from { filter: drop-shadow(0 0 10px #ff2d95); }
-  to { filter: drop-shadow(0 0 30px #ff2d95); }
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
 }
 
-/* VOTES */
-.hidden {
-  display: none;
-}
-
-#votes {
-  padding: 40px;
-}
+/* GRID */
+.hidden { display: none; }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding: 20px;
 }
 
 .card {
   border: 2px solid #ff2d95;
-  box-shadow: 0 0 15px #ff2d95;
   padding: 10px;
   text-align: center;
 }
 
 .card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
 }
 
 button {
   margin-top: 10px;
   padding: 10px;
-  width: 100%;
   background: #e50914;
-  color: white;
   border: none;
+  color: white;
   font-weight: bold;
-  cursor: pointer;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-/* VOTE FAIT */
-.voted img {
-  filter: grayscale(100%);
-  opacity: 0.5;
 }
