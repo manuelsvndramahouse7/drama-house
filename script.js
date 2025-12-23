@@ -1,24 +1,28 @@
-const buttons = document.querySelectorAll(".vote-btn");
+// INTRO
+setTimeout(() => {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("vote-section").classList.remove("hidden");
+}, 3000);
 
-// si déjà voté
-if (localStorage.getItem("voted")) {
-  buttons.forEach(btn => {
-    btn.textContent = "VOTE ENREGISTRÉ";
-    btn.classList.add("disabled");
+// VOTE
+function vote(id) {
+  if (localStorage.getItem("hasVoted")) return;
+
+  localStorage.setItem("hasVoted", "true");
+
+  let votes = JSON.parse(localStorage.getItem("votes") || "{}");
+  votes[id] = (votes[id] || 0) + 1;
+  localStorage.setItem("votes", JSON.stringify(votes));
+
+  document.querySelectorAll(".vote-btn").forEach(btn => {
     btn.disabled = true;
+    btn.innerText = "VOTE ENREGISTRÉ";
   });
 }
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (localStorage.getItem("voted")) return;
-
-    localStorage.setItem("voted", "true");
-
-    buttons.forEach(b => {
-      b.textContent = "VOTE ENREGISTRÉ";
-      b.classList.add("disabled");
-      b.disabled = true;
-    });
-  });
-});
+// AFFICHER PERDANT PUBLIC
+const loser = localStorage.getItem("loser");
+if (loser) {
+  document.getElementById("loser").innerText =
+    "Le perdant est le candidat #" + loser;
+}
