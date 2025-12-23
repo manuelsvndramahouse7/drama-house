@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>ADMIN</title>
-<style>
-body {
-  background: black;
-  color: white;
-  font-family: Arial;
-  text-align: center;
-}
-button {
-  margin: 10px;
-  padding: 15px;
-  font-size: 16px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Admin – Drama House</title>
+  <style>
+    body { background:black; color:white; font-family:Arial; text-align:center; }
+    button { padding:10px 20px; margin:5px; }
+  </style>
 </head>
 <body>
 
-<h1>ADMIN – DRAMA HOUSE</h1>
+<h1>ADMIN – RÉSULTATS</h1>
 
-<p>Choisir le perdant :</p>
+<pre id="results"></pre>
 
-<button onclick="setLoser(0)">Candidat 1</button>
-<button onclick="setLoser(1)">Candidat 2</button>
-<button onclick="setLoser(2)">Candidat 3</button>
-<button onclick="setLoser(3)">Candidat 4</button>
-<button onclick="setLoser(4)">Candidat 5</button>
-<button onclick="setLoser(5)">Candidat 6</button>
-<button onclick="setLoser(6)">Candidat 7</button>
-<button onclick="setLoser(7)">Candidat 8</button>
-<button onclick="setLoser(8)">Candidat 9</button>
+<h2>Choisir le perdant</h2>
+<input type="number" id="loserId" min="1" max="9">
+<button onclick="setLoser()">Valider</button>
 
-<hr>
-
-<button onclick="resetAll()">🔄 RÉINITIALISER</button>
+<h2>Réinitialiser</h2>
+<button onclick="resetAll()">RESET TOTAL</button>
 
 <script>
-function setLoser(id) {
+function refresh() {
+  document.getElementById("results").innerText =
+    localStorage.getItem("votes") || "Aucun vote";
+}
+refresh();
+
+function setLoser() {
+  const id = document.getElementById("loserId").value;
   localStorage.setItem("loser", id);
-  alert("Perdant défini !");
+  alert("Perdant défini");
 }
 
 function resetAll() {
-  localStorage.removeItem("loser");
-  localStorage.removeItem("voted");
-  alert("Votes et perdant réinitialisés");
+  localStorage.clear();
+  alert("Tout réinitialisé");
 }
 </script>
 
