@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – Drama House</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
 
+<h1>Résultats (local)</h1>
+<pre id="results"></pre>
+
+<script>
+  const votes = localStorage.getItem("votes");
+  document.getElementById("results").textContent = votes;
+</script>
+
+</body>
+</html>
