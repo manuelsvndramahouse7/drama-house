@@ -1,27 +1,28 @@
-// Intro
+const intro = document.getElementById("intro");
+const content = document.getElementById("content");
+const buttons = document.querySelectorAll(".vote-btn");
+const loserBox = document.getElementById("loser");
+
+// INTRO 2s
 setTimeout(() => {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("content").classList.remove("hidden");
+  intro.style.display = "none";
+  content.classList.remove("hidden");
 }, 2000);
 
-// Vote unique par appareil
-const voted = localStorage.getItem("voted");
+// AFFICHER PERDANT SI EXISTE
+const loser = localStorage.getItem("loser");
+if (loser !== null) {
+  loserBox.innerText = "❌ Le perdant est : Candidat " + (parseInt(loser) + 1);
+}
 
-document.querySelectorAll(".card button").forEach(btn => {
+// VOTE
+buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    if (voted) {
-      alert("Vous avez déjà voté");
-      return;
-    }
+    if (localStorage.getItem("voted")) return;
+
     localStorage.setItem("voted", "true");
+    buttons.forEach(b => b.disabled = true);
+
     btn.innerText = "VOTE ENREGISTRÉ";
-    btn.disabled = true;
   });
 });
-
-// Affichage du perdant
-const loser = localStorage.getItem("loser");
-if (loser) {
-  document.getElementById("loser").innerText =
-    "🚨 Le perdant est le candidat " + loser;
-}
