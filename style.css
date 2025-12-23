@@ -57,9 +57,10 @@ body {
 
 /* CONTENU */
 #content {
-  display: block;
+  display: block;   /* 👈 OBLIGATOIRE */
   text-align: center;
-  padding-top: 100px;
+  padding-top: 40px;
+}
 }
 
 /* GRILLE DES VOTES */
