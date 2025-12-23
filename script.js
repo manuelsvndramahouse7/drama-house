@@ -1,14 +1,25 @@
-// INTRO → DISPARITION APRÈS 2s
+// INTRO
 setTimeout(() => {
   document.getElementById("intro").style.display = "none";
   document.getElementById("app").classList.remove("hidden");
 }, 2000);
 
-// ANIMATION CLIC SUR CASE
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
-    card.classList.remove("clicked");
-    void card.offsetWidth;
-    card.classList.add("clicked");
+// VOTE UNIQUE PAR APPAREIL
+const alreadyVoted = localStorage.getItem("voted");
+
+document.querySelectorAll(".vote-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+
+    if (alreadyVoted) {
+      alert("Tu as déjà voté !");
+      return;
+    }
+
+    const card = btn.parentElement;
+    card.classList.add("voted");
+
+    localStorage.setItem("voted", "true");
+
+    document.querySelectorAll(".vote-btn").forEach(b => b.disabled = true);
   });
 });
