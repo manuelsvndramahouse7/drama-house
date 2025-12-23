@@ -1,29 +1,19 @@
-// INTRO
+// Affiche le site après l'intro
 setTimeout(() => {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("votes").classList.remove("hidden");
+  document.getElementById("app").classList.remove("hidden");
 }, 2000);
 
-// FAUX VOTE (1 par appareil)
-if (localStorage.getItem("voted")) {
-  disableVotes();
-}
+// Vote unique
+const voted = localStorage.getItem("voted");
 
-document.querySelectorAll(".card button").forEach(button => {
-  button.addEventListener("click", () => {
-    if (localStorage.getItem("voted")) return;
-
-    const card = button.parentElement;
-    card.classList.add("voted");
-
+document.querySelectorAll(".card button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (voted) {
+      alert("Tu as déjà voté !");
+      return;
+    }
     localStorage.setItem("voted", "true");
-    disableVotes();
+    btn.parentElement.style.opacity = "0.4";
+    btn.textContent = "VOTÉ";
   });
 });
-
-function disableVotes() {
-  document.querySelectorAll("button").forEach(btn => {
-    btn.disabled = true;
-    btn.textContent = "VOTE ENREGISTRÉ";
-  });
-}
