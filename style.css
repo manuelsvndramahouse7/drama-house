@@ -3,7 +3,6 @@ body {
   background: black;
   font-family: Arial, sans-serif;
   color: white;
-  overflow-x: hidden;
 }
 
 /* INTRO */
@@ -14,31 +13,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 10;
 }
 
 #intro img {
-  width: 320px;
-  animation: logoBounce 2s ease;
-  filter: drop-shadow(0 0 40px #ff2d95);
+  width: 300px;
+  animation: bounce 2s ease, glow 2s infinite alternate;
 }
 
-@keyframes logoBounce {
-  0% { transform: scale(0.5); opacity: 0; }
-  60% { transform: scale(1.15); opacity: 1; }
+@keyframes bounce {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(1); }
 }
 
-/* CONTENU */
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px #ff2d95); }
+  to { filter: drop-shadow(0 0 30px #ff2d95); }
+}
+
+/* VOTES */
 .hidden {
   display: none;
+}
+
+#votes {
+  padding: 40px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 30px;
+  gap: 20px;
 }
 
 .card {
@@ -46,32 +52,31 @@ body {
   box-shadow: 0 0 15px #ff2d95;
   padding: 10px;
   text-align: center;
-  transition: transform 0.2s;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-}
-
-.card.voted {
-  opacity: 0.4;
-  text-decoration: line-through;
 }
 
 button {
   margin-top: 10px;
   padding: 10px;
   width: 100%;
-  background: linear-gradient(90deg, #e50914, #ff2d95);
-  border: none;
+  background: #e50914;
   color: white;
+  border: none;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 6px;
 }
 
 button:active {
   transform: scale(0.95);
+}
+
+/* VOTE FAIT */
+.voted img {
+  filter: grayscale(100%);
+  opacity: 0.5;
 }
