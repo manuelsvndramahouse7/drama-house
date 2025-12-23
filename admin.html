@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Admin – Drama House</title>
+  <title>Admin - Résultats</title>
   <style>
     body {
       background: black;
@@ -10,16 +10,25 @@
       font-family: Arial;
       padding: 20px;
     }
+    h1 { color: #ff2d95; }
   </style>
 </head>
 <body>
 
-<h1>Résultats (local)</h1>
-<pre id="results"></pre>
+<h1>Résultats (ADMIN)</h1>
+<div id="results"></div>
 
 <script>
-  const votes = localStorage.getItem("votes");
-  document.getElementById("results").textContent = votes;
+  const votes = JSON.parse(localStorage.getItem("votes")) || {};
+  const container = document.getElementById("results");
+
+  if (Object.keys(votes).length === 0) {
+    container.innerHTML = "<p>Aucun vote enregistré</p>";
+  } else {
+    for (let id in votes) {
+      container.innerHTML += `<p>Candidat ${id} : ${votes[id]} votes</p>`;
+    }
+  }
 </script>
 
 </body>
