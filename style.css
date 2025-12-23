@@ -190,10 +190,10 @@ button:active {
 #intro img {
   width: 260px;
   max-width: 80%;
+  opacity: 0;
   animation: introZoom 2.5s ease forwards;
 }
 
-/* Animation logo */
 @keyframes introZoom {
   0% {
     transform: scale(0.6);
