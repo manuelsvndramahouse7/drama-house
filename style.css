@@ -62,41 +62,26 @@ body {
   padding-top: 40px;
 }
 }
+/* ===== GRILLE 3x3 SIMPLE ===== */
 
-/* GRILLE DES VOTES */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  padding: 20px;
   max-width: 360px;
-  margin: 0 auto;
-}
+  margin: 40px auto;
 }
 
 .card {
-  background: #111;
+  aspect-ratio: 1 / 1;
   border-radius: 12px;
   overflow: hidden;
+  background: #111;
   border: 2px solid #ff2d95;
-
-  height: 100px; /* ← OBLIGATOIRE */
-}
 }
 
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-/* ANIMATION AU CLIC (style Netflix) */
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card.active {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff2d95;
-  animation: neonPulse 1s infinite alternate;
 }
