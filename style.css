@@ -1,14 +1,9 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   background: black;
   font-family: Arial, sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 /* INTRO */
@@ -19,38 +14,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 #intro img {
-  width: 300px;
-  animation: bounce 2s ease, glow 2s ease;
-  filter: drop-shadow(0 0 25px #ff2d95);
+  width: 320px;
+  animation: logoBounce 2s ease;
+  filter: drop-shadow(0 0 40px #ff2d95);
 }
 
-/* APP */
+@keyframes logoBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* CONTENU */
 .hidden {
   display: none;
 }
 
-#app {
-  padding: 30px;
-}
-
-/* GRID 3x3 */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
+  padding: 30px;
 }
 
-/* CARD */
 .card {
   border: 2px solid #ff2d95;
   box-shadow: 0 0 15px #ff2d95;
   padding: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .card img {
@@ -59,42 +55,23 @@ body {
   object-fit: cover;
 }
 
-/* BOUTON */
-.vote-btn {
+.card.voted {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+button {
   margin-top: 10px;
   padding: 10px;
   width: 100%;
-  background: #e50914;
-  color: white;
+  background: linear-gradient(90deg, #e50914, #ff2d95);
   border: none;
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  border-radius: 6px;
 }
 
-.vote-btn:active {
-  transform: scale(0.9);
+button:active {
+  transform: scale(0.95);
 }
-
-/* VOTÉ */
-.voted img {
-  filter: grayscale(100%) brightness(0.5);
-  position: relative;
-}
-
-.voted img::after {
-  content: "✖";
-}
-
-/* ANIMATIONS */
-@keyframes bounce {
-  0% { transform: scale(0.5); }
-  60% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
-@keyframes glow {
-  from { filter: drop-shadow(0 0 0px #ff2d95); }
-  to { filter: drop-shadow(0 0 30px #ff2d95); }
-}
-
