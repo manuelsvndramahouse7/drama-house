@@ -1,19 +1,19 @@
-// Affiche le site après l'intro
 setTimeout(() => {
-  document.getElementById("app").classList.remove("hidden");
+  document.getElementById("logo-screen").style.display = "none";
+  document.getElementById("content").classList.remove("hidden");
 }, 2000);
 
-// Vote unique
-const voted = localStorage.getItem("voted");
+const voted = localStorage.getItem("hasVoted");
 
-document.querySelectorAll(".card button").forEach(btn => {
+document.querySelectorAll(".vote-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    if (voted) {
-      alert("Tu as déjà voté !");
+    if (localStorage.getItem("hasVoted")) {
+      alert("Vote déjà enregistré");
       return;
     }
-    localStorage.setItem("voted", "true");
-    btn.parentElement.style.opacity = "0.4";
-    btn.textContent = "VOTÉ";
+
+    localStorage.setItem("hasVoted", "true");
+    btn.textContent = "VOTE ENREGISTRÉ";
+    btn.style.background = "#444";
   });
 });
