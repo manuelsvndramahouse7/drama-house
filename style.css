@@ -82,6 +82,10 @@ body {
   position: relative;
   overflow: hidden;
 }
+.card {
+  position: relative;
+  overflow: hidden;
+}
 
 .card img {
   width: 100%;
