@@ -16,16 +16,16 @@
 <div id="vote-section">
   <div class="grid">
     <!-- 9 cartes -->
-    <script>
-      for (let i = 1; i <= 9; i++) {
-        document.write(`
-          <div class="card">
-            <img src="IMG_${i}.png">
-            <button class="vote-btn" onclick="vote(${i})">VOTER</button>
-          </div>
-        `);
-      }
-    </script>
+  <script>
+  for (let i = 1; i <= 9; i++) {
+    document.write(`
+      <div class="card">
+        <img src="IMG_${i}.png">
+        <button class="vote-btn" onclick="vote(${i})">VOTER</button>
+      </div>
+    `);
+  }
+</script>
   </div>
 
   <div id="loser" class="loser"></div>
